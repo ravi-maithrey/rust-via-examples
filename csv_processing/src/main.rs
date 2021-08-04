@@ -15,6 +15,8 @@ fn main() {
         if i == 0 || record.trim().len() == 0{
             continue;
         }
+        // declaring a vector
+        // the '_' tells rustc to infer the type
         let fields: Vec<_> = record
         .split(',')
         .map(|field| field.trim())
@@ -28,6 +30,8 @@ fn main() {
         // cargo run using --release flag
         // ie, debug is not considered in release versions
         let name = fields[0];
+        // when we use 'if' for an assignment
+        // it returns an Ok(T) object. T is any type are returned
         if let Ok(age) = fields[1].parse::<i32>(){
             println!("{} is {} years old", name, age);
         }
